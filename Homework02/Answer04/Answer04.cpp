@@ -19,10 +19,10 @@ int _tmain(int argc, _TCHAR* argv[])
 {
     vector<TRADE_DATE> tradeDateList;
     intersection_finder finder;
-    generateTradeDates(1000, tradeDateList);
+    generateTradeDates(200, tradeDateList);
     finder.sortByOperatorLess(tradeDateList);
 
-    function<void(const TRADE_DATE&)> new_function =
+    function<void(TRADE_DATE)> new_function =
         bind(
             &intersection_finder::intersect,
             &finder,
@@ -30,14 +30,11 @@ int _tmain(int argc, _TCHAR* argv[])
             tradeDateList.begin(),
             tradeDateList.end());
 
-    TRADE_DATE testDate1(tradeDateList[250].getBeginDate(), 10);
-    TRADE_DATE testDate2(tradeDateList[500].getBeginDate(), 10);
-    TRADE_DATE testDate3(tradeDateList[750].getBeginDate(), 10);
+    for (auto date : tradeDateList)
+    {
+        new_function(date);
+    }
 
-    new_function(testDate1);
-    new_function(testDate2);
-    new_function(testDate3);
-    
 	return 0;
 }
 

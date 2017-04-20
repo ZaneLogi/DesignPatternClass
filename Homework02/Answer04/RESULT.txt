@@ -1,50 +1,70 @@
-ID: 1000
-begin_date: 1925/12/6
-end_date: 1925/12/16
-duration: 10
-ID: 947
-begin_date: 1925/12/6
-end_date: 1925/12/15
+ID: 86
+begin_date: 1902/11/29
+end_date: 1902/12/8
 duration: 9
-TRADE_DATA ID : 1000 overlaps with TRADE_DATE ID : 947 by 9 days.
+ID: 140
+begin_date: 1902/11/29
+end_date: 1902/12/4
+duration: 5
+TRADE_DATA ID : 86 overlaps with TRADE_DATE ID : 140 by 5 days.
 
-ID: 1000
-begin_date: 1925/12/6
-end_date: 1925/12/16
-duration: 10
-ID: 258
-begin_date: 1925/12/8
-end_date: 1925/12/9
-duration: 1
-TRADE_DATA ID : 1000 overlaps with TRADE_DATE ID : 258 by 1 days.
+ID: 140
+begin_date: 1902/11/29
+end_date: 1902/12/4
+duration: 5
+ID: 86
+begin_date: 1902/11/29
+end_date: 1902/12/8
+duration: 9
+TRADE_DATA ID : 140 overlaps with TRADE_DATE ID : 86 by 5 days.
 
-ID: 1001
-begin_date: 1953/1/25
-end_date: 1953/2/4
-duration: 10
-ID: 945
-begin_date: 1953/1/25
-end_date: 1953/2/4
-duration: 10
-TRADE_DATA ID : 1001 overlaps with TRADE_DATE ID : 945 by 10 days.
+ID: 6
+begin_date: 1906/2/13
+end_date: 1906/2/19
+duration: 6
+ID: 168
+begin_date: 1906/2/18
+end_date: 1906/2/24
+duration: 6
+TRADE_DATA ID : 6 overlaps with TRADE_DATE ID : 168 by 1 days.
 
-ID: 1002
-begin_date: 1977/7/24
-end_date: 1977/8/3
-duration: 10
-ID: 13
-begin_date: 1977/7/24
-end_date: 1977/7/25
-duration: 1
-TRADE_DATA ID : 1002 overlaps with TRADE_DATE ID : 13 by 1 days.
+ID: 44
+begin_date: 1912/10/4
+end_date: 1912/10/13
+duration: 9
+ID: 26
+begin_date: 1912/10/10
+end_date: 1912/10/14
+duration: 4
+TRADE_DATA ID : 44 overlaps with TRADE_DATE ID : 26 by 3 days.
 
-ID: 1002
-begin_date: 1977/7/24
-end_date: 1977/8/3
+ID: 158
+begin_date: 1972/8/3
+end_date: 1972/8/9
+duration: 6
+ID: 173
+begin_date: 1972/8/7
+end_date: 1972/8/17
 duration: 10
-ID: 315
-begin_date: 1977/7/30
-end_date: 1977/8/9
+TRADE_DATA ID : 158 overlaps with TRADE_DATE ID : 173 by 2 days.
+
+ID: 107
+begin_date: 1977/5/11
+end_date: 1977/5/15
+duration: 4
+ID: 165
+begin_date: 1977/5/11
+end_date: 1977/5/21
 duration: 10
-TRADE_DATA ID : 1002 overlaps with TRADE_DATE ID : 315 by 4 days.
+TRADE_DATA ID : 107 overlaps with TRADE_DATE ID : 165 by 4 days.
+
+ID: 165
+begin_date: 1977/5/11
+end_date: 1977/5/21
+duration: 10
+ID: 107
+begin_date: 1977/5/11
+end_date: 1977/5/15
+duration: 4
+TRADE_DATA ID : 165 overlaps with TRADE_DATE ID : 107 by 4 days.
 

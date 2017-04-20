@@ -40,6 +40,9 @@ public:
         // do the intersection test
         for (auto itr = low; itr < up; ++itr)
         {
+            if (itr->getID() == date.getID())
+                continue;
+
             int days = itr->testIntersection(date);
             if (days > 0)
             {
