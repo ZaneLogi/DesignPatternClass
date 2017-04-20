@@ -1,0 +1,299 @@
+begin_date: 1971/1/11
+end_date: 1971/1/19
+duration: 8
+ID: 506
+begin_date: 1971/1/18
+end_date: 1971/1/25
+duration: 7
+TRADE_DATA ID : 896 overlaps with TRADE_DATE ID : 506 by 1 days.
+
+ID: 302
+begin_date: 1971/1/18
+end_date: 1971/1/27
+duration: 9
+ID: 506
+begin_date: 1971/1/18
+end_date: 1971/1/25
+duration: 7
+TRADE_DATA ID : 302 overlaps with TRADE_DATE ID : 506 by 7 days.
+
+ID: 523
+begin_date: 1971/2/9
+end_date: 1971/2/14
+duration: 5
+ID: 92
+begin_date: 1971/2/9
+end_date: 1971/2/12
+duration: 3
+TRADE_DATA ID : 523 overlaps with TRADE_DATE ID : 92 by 3 days.
+
+ID: 459
+begin_date: 1973/12/13
+end_date: 1973/12/18
+duration: 5
+ID: 39
+begin_date: 1973/12/17
+end_date: 1973/12/22
+duration: 5
+TRADE_DATA ID : 459 overlaps with TRADE_DATE ID : 39 by 1 days.
+
+ID: 371
+begin_date: 1974/3/3
+end_date: 1974/3/7
+duration: 4
+ID: 718
+begin_date: 1974/3/4
+end_date: 1974/3/7
+duration: 3
+TRADE_DATA ID : 371 overlaps with TRADE_DATE ID : 718 by 3 days.
+
+ID: 388
+begin_date: 1975/3/12
+end_date: 1975/3/21
+duration: 9
+ID: 987
+begin_date: 1975/3/20
+end_date: 1975/3/27
+duration: 7
+TRADE_DATA ID : 388 overlaps with TRADE_DATE ID : 987 by 1 days.
+
+ID: 904
+begin_date: 1976/2/29
+end_date: 1976/3/9
+duration: 9
+ID: 182
+begin_date: 1976/3/7
+end_date: 1976/3/15
+duration: 8
+TRADE_DATA ID : 904 overlaps with TRADE_DATE ID : 182 by 2 days.
+
+ID: 293
+begin_date: 1976/7/7
+end_date: 1976/7/16
+duration: 9
+ID: 143
+begin_date: 1976/7/14
+end_date: 1976/7/21
+duration: 7
+TRADE_DATA ID : 293 overlaps with TRADE_DATE ID : 143 by 2 days.
+
+ID: 143
+begin_date: 1976/7/14
+end_date: 1976/7/21
+duration: 7
+ID: 145
+begin_date: 1976/7/16
+end_date: 1976/7/21
+duration: 5
+TRADE_DATA ID : 143 overlaps with TRADE_DATE ID : 145 by 5 days.
+
+ID: 450
+begin_date: 1979/9/26
+end_date: 1979/10/4
+duration: 8
+ID: 465
+begin_date: 1979/9/30
+end_date: 1979/10/3
+duration: 3
+TRADE_DATA ID : 450 overlaps with TRADE_DATE ID : 465 by 3 days.
+
+ID: 450
+begin_date: 1979/9/26
+end_date: 1979/10/4
+duration: 8
+ID: 635
+begin_date: 1979/10/2
+end_date: 1979/10/6
+duration: 4
+TRADE_DATA ID : 450 overlaps with TRADE_DATE ID : 635 by 2 days.
+
+ID: 465
+begin_date: 1979/9/30
+end_date: 1979/10/3
+duration: 3
+ID: 635
+begin_date: 1979/10/2
+end_date: 1979/10/6
+duration: 4
+TRADE_DATA ID : 465 overlaps with TRADE_DATE ID : 635 by 1 days.
+
+ID: 995
+begin_date: 1981/4/10
+end_date: 1981/4/19
+duration: 9
+ID: 847
+begin_date: 1981/4/17
+end_date: 1981/4/23
+duration: 6
+TRADE_DATA ID : 995 overlaps with TRADE_DATE ID : 847 by 2 days.
+
+ID: 298
+begin_date: 1983/8/14
+end_date: 1983/8/20
+duration: 6
+ID: 127
+begin_date: 1983/8/16
+end_date: 1983/8/17
+duration: 1
+TRADE_DATA ID : 298 overlaps with TRADE_DATE ID : 127 by 1 days.
+
+ID: 775
+begin_date: 1984/1/30
+end_date: 1984/2/8
+duration: 9
+ID: 255
+begin_date: 1984/2/6
+end_date: 1984/2/15
+duration: 9
+TRADE_DATA ID : 775 overlaps with TRADE_DATE ID : 255 by 2 days.
+
+ID: 142
+begin_date: 1984/2/20
+end_date: 1984/3/1
+duration: 10
+ID: 983
+begin_date: 1984/2/28
+end_date: 1984/3/6
+duration: 7
+TRADE_DATA ID : 142 overlaps with TRADE_DATE ID : 983 by 2 days.
+
+ID: 449
+begin_date: 1984/8/2
+end_date: 1984/8/7
+duration: 5
+ID: 41
+begin_date: 1984/8/4
+end_date: 1984/8/13
+duration: 9
+TRADE_DATA ID : 449 overlaps with TRADE_DATE ID : 41 by 3 days.
+
+ID: 707
+begin_date: 1985/9/16
+end_date: 1985/9/18
+duration: 2
+ID: 348
+begin_date: 1985/9/17
+end_date: 1985/9/23
+duration: 6
+TRADE_DATA ID : 707 overlaps with TRADE_DATE ID : 348 by 1 days.
+
+ID: 856
+begin_date: 1986/2/1
+end_date: 1986/2/11
+duration: 10
+ID: 325
+begin_date: 1986/2/1
+end_date: 1986/2/10
+duration: 9
+TRADE_DATA ID : 856 overlaps with TRADE_DATE ID : 325 by 9 days.
+
+ID: 544
+begin_date: 1986/5/14
+end_date: 1986/5/22
+duration: 8
+ID: 958
+begin_date: 1986/5/16
+end_date: 1986/5/25
+duration: 9
+TRADE_DATA ID : 544 overlaps with TRADE_DATE ID : 958 by 6 days.
+
+ID: 484
+begin_date: 1991/11/30
+end_date: 1991/12/5
+duration: 5
+ID: 160
+begin_date: 1991/12/1
+end_date: 1991/12/4
+duration: 3
+TRADE_DATA ID : 484 overlaps with TRADE_DATE ID : 160 by 3 days.
+
+ID: 70
+begin_date: 1993/5/29
+end_date: 1993/6/7
+duration: 9
+ID: 59
+begin_date: 1993/6/6
+end_date: 1993/6/10
+duration: 4
+TRADE_DATA ID : 70 overlaps with TRADE_DATE ID : 59 by 1 days.
+
+ID: 279
+begin_date: 1994/11/25
+end_date: 1994/12/3
+duration: 8
+ID: 516
+begin_date: 1994/11/28
+end_date: 1994/12/1
+duration: 3
+TRADE_DATA ID : 279 overlaps with TRADE_DATE ID : 516 by 3 days.
+
+ID: 928
+begin_date: 1994/12/15
+end_date: 1994/12/21
+duration: 6
+ID: 948
+begin_date: 1994/12/19
+end_date: 1994/12/23
+duration: 4
+TRADE_DATA ID : 928 overlaps with TRADE_DATE ID : 948 by 2 days.
+
+ID: 661
+begin_date: 1995/12/27
+end_date: 1996/1/6
+duration: 10
+ID: 105
+begin_date: 1995/12/27
+end_date: 1996/1/2
+duration: 6
+TRADE_DATA ID : 661 overlaps with TRADE_DATE ID : 105 by 6 days.
+
+ID: 984
+begin_date: 1996/8/14
+end_date: 1996/8/21
+duration: 7
+ID: 8
+begin_date: 1996/8/16
+end_date: 1996/8/17
+duration: 1
+TRADE_DATA ID : 984 overlaps with TRADE_DATE ID : 8 by 1 days.
+
+ID: 984
+begin_date: 1996/8/14
+end_date: 1996/8/21
+duration: 7
+ID: 425
+begin_date: 1996/8/16
+end_date: 1996/8/20
+duration: 4
+TRADE_DATA ID : 984 overlaps with TRADE_DATE ID : 425 by 4 days.
+
+ID: 8
+begin_date: 1996/8/16
+end_date: 1996/8/17
+duration: 1
+ID: 425
+begin_date: 1996/8/16
+end_date: 1996/8/20
+duration: 4
+TRADE_DATA ID : 8 overlaps with TRADE_DATE ID : 425 by 1 days.
+
+ID: 867
+begin_date: 1998/11/6
+end_date: 1998/11/9
+duration: 3
+ID: 836
+begin_date: 1998/11/7
+end_date: 1998/11/16
+duration: 9
+TRADE_DATA ID : 867 overlaps with TRADE_DATE ID : 836 by 2 days.
+
+ID: 123
+begin_date: 1999/5/16
+end_date: 1999/5/25
+duration: 9
+ID: 657
+begin_date: 1999/5/23
+end_date: 1999/5/25
+duration: 2
+TRADE_DATA ID : 123 overlaps with TRADE_DATE ID : 657 by 2 days.
+
