@@ -50,9 +50,9 @@ int _tmain(int argc, _TCHAR* argv[])
     vector<TRADE_DATE> list;
     generateTradeDates(list);
 
-    for (int i = 0; i < 10; i++)
+    for (const auto& date : list)
     {
-        list[i].print();
+        date.print();
     }
 
     return 0;
