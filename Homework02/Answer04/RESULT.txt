@@ -1,70 +1,70 @@
-ID: 86
-begin_date: 1902/11/29
-end_date: 1902/12/8
+ID: 49
+begin_date: 1902/10/18
+end_date: 1902/10/26
+duration: 8
+ID: 0
+begin_date: 1902/10/24
+end_date: 1902/10/25
+duration: 1
+TRADE_DATA ID : 49 overlaps with TRADE_DATE ID : 0 by 1 days.
+
+ID: 189
+begin_date: 1946/6/24
+end_date: 1946/7/3
 duration: 9
-ID: 140
-begin_date: 1902/11/29
-end_date: 1902/12/4
+ID: 125
+begin_date: 1946/6/26
+end_date: 1946/7/1
 duration: 5
-TRADE_DATA ID : 86 overlaps with TRADE_DATE ID : 140 by 5 days.
+TRADE_DATA ID : 189 overlaps with TRADE_DATE ID : 125 by 5 days.
 
-ID: 140
-begin_date: 1902/11/29
-end_date: 1902/12/4
-duration: 5
-ID: 86
-begin_date: 1902/11/29
-end_date: 1902/12/8
-duration: 9
-TRADE_DATA ID : 140 overlaps with TRADE_DATE ID : 86 by 5 days.
-
-ID: 6
-begin_date: 1906/2/13
-end_date: 1906/2/19
-duration: 6
-ID: 168
-begin_date: 1906/2/18
-end_date: 1906/2/24
-duration: 6
-TRADE_DATA ID : 6 overlaps with TRADE_DATE ID : 168 by 1 days.
-
-ID: 44
-begin_date: 1912/10/4
-end_date: 1912/10/13
-duration: 9
-ID: 26
-begin_date: 1912/10/10
-end_date: 1912/10/14
-duration: 4
-TRADE_DATA ID : 44 overlaps with TRADE_DATE ID : 26 by 3 days.
-
-ID: 158
-begin_date: 1972/8/3
-end_date: 1972/8/9
-duration: 6
-ID: 173
-begin_date: 1972/8/7
-end_date: 1972/8/17
+ID: 79
+begin_date: 1951/5/2
+end_date: 1951/5/9
+duration: 7
+ID: 12
+begin_date: 1951/5/5
+end_date: 1951/5/15
 duration: 10
-TRADE_DATA ID : 158 overlaps with TRADE_DATE ID : 173 by 2 days.
+TRADE_DATA ID : 79 overlaps with TRADE_DATE ID : 12 by 4 days.
 
-ID: 107
-begin_date: 1977/5/11
-end_date: 1977/5/15
-duration: 4
-ID: 165
-begin_date: 1977/5/11
-end_date: 1977/5/21
-duration: 10
-TRADE_DATA ID : 107 overlaps with TRADE_DATE ID : 165 by 4 days.
+ID: 35
+begin_date: 1972/3/29
+end_date: 1972/4/4
+duration: 6
+ID: 58
+begin_date: 1972/3/29
+end_date: 1972/4/1
+duration: 3
+TRADE_DATA ID : 35 overlaps with TRADE_DATE ID : 58 by 3 days.
 
-ID: 165
-begin_date: 1977/5/11
-end_date: 1977/5/21
+ID: 58
+begin_date: 1972/3/29
+end_date: 1972/4/1
+duration: 3
+ID: 35
+begin_date: 1972/3/29
+end_date: 1972/4/4
+duration: 6
+TRADE_DATA ID : 58 overlaps with TRADE_DATE ID : 35 by 3 days.
+
+ID: 124
+begin_date: 1989/9/28
+end_date: 1989/10/8
 duration: 10
-ID: 107
-begin_date: 1977/5/11
-end_date: 1977/5/15
-duration: 4
-TRADE_DATA ID : 165 overlaps with TRADE_DATE ID : 107 by 4 days.
+ID: 7
+begin_date: 1989/9/29
+end_date: 1989/10/7
+duration: 8
+TRADE_DATA ID : 124 overlaps with TRADE_DATE ID : 7 by 8 days.
+
+ID: 94
+begin_date: 1996/5/11
+end_date: 1996/5/18
+duration: 7
+ID: 25
+begin_date: 1996/5/12
+end_date: 1996/5/18
+duration: 6
+TRADE_DATA ID : 94 overlaps with TRADE_DATE ID : 25 by 6 days.
 

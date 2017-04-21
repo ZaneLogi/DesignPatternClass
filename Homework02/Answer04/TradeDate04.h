@@ -128,14 +128,15 @@ int getDaysSince01_01_1900(const tuple<int, int, int>& date)
     int days = 0;
     for (int i = 1900; i < year; i++)
     {
-        days += 365 + (i % 4 == 0 ? 1 : 0) - (i % 100 == 0 ? 1 : 0);
+        days += 365 + ((i % 4 == 0 && i % 100 != 0) || (i % 400 == 0) ? 1 : 0);
     }
 
     int totalMonthDays[12] = {
         31, 28, 31, 30, 31, 30,
         31, 31, 30, 31, 30, 31 };
-    if (year % 4 == 0 && year % 100 != 0)
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
     {
+        // leap year
         totalMonthDays[1] = 29;
     }
 
@@ -149,14 +150,13 @@ int getDaysSince01_01_1900(const tuple<int, int, int>& date)
     return days;
 }
 
-
 void setDateSince01_01_1900(int days, tuple<int, int, int>& date)
 {
     int year = 1900, month = 1, mday = 1;
 
     while (days >= 365)
     {
-        int totalYearDays = 365 + (year % 4 == 0 ? 1 : 0) - (year % 100 == 0 ? 1 : 0);
+        int totalYearDays = 365 + ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0) ? 1 : 0);
         if (days < totalYearDays)
             break;
         days -= totalYearDays;
@@ -166,7 +166,7 @@ void setDateSince01_01_1900(int days, tuple<int, int, int>& date)
     int totalMonthDays[12] = {
         31, 28, 31, 30, 31, 30,
         31, 31, 30, 31, 30, 31 };
-    if (year % 4 == 0 && year % 100 != 0)
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
     {
         totalMonthDays[1] = 29;
     }
@@ -186,6 +186,7 @@ void setDateSince01_01_1900(int days, tuple<int, int, int>& date)
     get<1>(date) = month;
     get<2>(date) = mday;
 }
+
 
 
 
