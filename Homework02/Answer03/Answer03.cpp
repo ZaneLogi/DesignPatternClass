@@ -59,7 +59,7 @@ public:
 
         // check the end date
         auto date2 = TRADE_DATE(date.getEndDate(), 0);
-        auto up = upper_bound(first, last, date2);
+        auto up = upper_bound(low, last, date2);
 
         // do the intersection test
         for (auto itr = low; itr < up; ++itr)
