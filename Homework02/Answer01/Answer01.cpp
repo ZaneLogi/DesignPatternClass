@@ -101,14 +101,15 @@ int getDaysSince01_01_1900(const tuple<int, int, int>& date)
     int days = 0;
     for (int i = 1900; i < year; i++)
     {
-        days += 365 + (i % 4 == 0 ? 1 : 0) - (i % 100 == 0 ? 1 : 0);
+        days += 365 + ((i % 4 == 0 && i % 100 != 0) || (i % 400 == 0) ? 1 : 0);
     }
 
     int totalMonthDays[12] = {
         31, 28, 31, 30, 31, 30,
         31, 31, 30, 31, 30, 31 };
-    if (year % 4 == 0 && year % 100 != 0)
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
     {
+        // leap year
         totalMonthDays[1] = 29;
     }
 
@@ -128,7 +129,7 @@ void setDateSince01_01_1900(int days, tuple<int, int, int>& date)
 
     while (days >= 365)
     {
-        int totalYearDays = 365 + (year % 4 == 0 ? 1 : 0) - (year % 100 == 0 ? 1 : 0);
+        int totalYearDays = 365 + ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0) ? 1 : 0);
         if (days < totalYearDays)
             break;
         days -= totalYearDays;
@@ -138,7 +139,7 @@ void setDateSince01_01_1900(int days, tuple<int, int, int>& date)
     int totalMonthDays[12] = {
         31, 28, 31, 30, 31, 30,
         31, 31, 30, 31, 30, 31 };
-    if (year % 4 == 0 && year % 100 != 0)
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
     {
         totalMonthDays[1] = 29;
     }
@@ -163,11 +164,20 @@ void setDateSince01_01_1900(int days, tuple<int, int, int>& date)
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-    TRADE_DATE tdate1(make_tuple<int, int, int>(1901, 2, 28), 1);
+    TRADE_DATE tdate1(make_tuple<int, int, int>(1900, 2, 28), 1);
     tdate1.print();
 
-    TRADE_DATE tdate2(make_tuple<int, int, int>(2000, 12, 31), make_tuple<int, int, int>(2001, 1, 1));
+    TRADE_DATE tdate2(make_tuple<int, int, int>(1904, 2, 28), 1);
     tdate2.print();
+
+    TRADE_DATE tdate3(make_tuple<int, int, int>(2000, 2, 28), 1);
+    tdate3.print();
+
+    TRADE_DATE tdate4(make_tuple<int, int, int>(1980, 12, 1), make_tuple<int, int, int>(1981, 1, 1));
+    tdate4.print();
+
+    TRADE_DATE tdate5(make_tuple<int, int, int>(2000, 12, 31), make_tuple<int, int, int>(2001, 1, 1));
+    tdate5.print();
 
     return 0;
 }
