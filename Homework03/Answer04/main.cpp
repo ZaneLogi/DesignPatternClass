@@ -26,6 +26,36 @@ public:
 };
 
 
+// Partial template specialization for specific type 'std::queue'
+template<typename ValueType>
+class BackInserter<ValueType, std::queue>
+{
+private:
+    std::queue<ValueType> list;
+
+public:
+    void insert(const ValueType& d)
+    {
+        list.push(d);
+    }
+};
+
+
+// Partial template specialization for specific type 'std::set'
+template<typename ValueType>
+class BackInserter<ValueType, std::set>
+{
+private:
+    std::set<ValueType> list;
+
+public:
+    void insert(const ValueType& d)
+    {
+        list.insert(d);
+    }
+};
+
+
 TEST(backinserter_test1, test_vector)
 {
     BackInserter<int, std::vector, std::allocator<int>> data; // noted the use of a template template parameter
@@ -46,13 +76,10 @@ TEST(backinserter_test1, test_vector)
         << "us\n";
 }
 
-#if 0
-//
-// error C2039: 'push_back' : is not a member of 'std::queue<ValueType,std::deque<int,std::allocator<_Ty>>>'
-//
+
 TEST(backinserter_test1, test_queue)
 {
-    BackInserter<int, std::queue, std::deque<int>> data; // noted the use of a template template parameter
+    BackInserter<int, std::queue> data; // noted the use of a template template parameter
 
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -69,7 +96,6 @@ TEST(backinserter_test1, test_queue)
         << std::chrono::duration_cast<std::chrono::microseconds>(end - start).count()
         << "us\n";
 }
-#endif
 
 
 TEST(backinserter_test1, test_deque)
@@ -114,13 +140,9 @@ TEST(backinserter_test1, test_list)
 }
 
 
-#if 0
-//
-// error C2039: 'push_back' : is not a member of 'std::set<ValueType,std::less<int>,std::allocator<_Ty>>'
-//
 TEST(backinserter_test1, test_set)
 {
-    BackInserter<int, std::set, std::less<int>, std::allocator<int>> data; // noted the use of a template template parameter
+    BackInserter<int, std::set> data; // noted the use of a template template parameter
 
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -137,7 +159,6 @@ TEST(backinserter_test1, test_set)
         << std::chrono::duration_cast<std::chrono::microseconds>(end - start).count()
         << "us\n";
 }
-#endif
 
 
 int main(int argc, char **argv)
