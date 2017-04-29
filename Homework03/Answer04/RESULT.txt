@@ -1,0 +1,17 @@
+[==========] Running 3 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 3 tests from backinserter_test1
+[ RUN      ] backinserter_test1.test_vector
+Time elapsed : 65000us
+[       OK ] backinserter_test1.test_vector (76 ms)
+[ RUN      ] backinserter_test1.test_deque
+Time elapsed : 87000us
+[       OK ] backinserter_test1.test_deque (1065 ms)
+[ RUN      ] backinserter_test1.test_list
+Time elapsed : 458000us
+[       OK ] backinserter_test1.test_list (5021 ms)
+[----------] 3 tests from backinserter_test1 (6167 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test case ran. (6171 ms total)
+[  PASSED  ] 3 tests.
