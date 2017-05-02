@@ -11,12 +11,11 @@
 
 template<
     typename ValueType,
-    template <typename, typename...> class ContainerType,
-    typename... Args>
+    template <typename, typename...> class ContainerType>
 class BackInserter
 {
 private:
-    ContainerType<ValueType, Args...> list;
+    ContainerType<ValueType, std::allocator<ValueType>> list;
 
 public:
     void insert(const ValueType& d)
@@ -58,7 +57,7 @@ public:
 
 TEST(backinserter_test1, test_vector)
 {
-    BackInserter<int, std::vector, std::allocator<int>> data; // noted the use of a template template parameter
+    BackInserter<int, std::vector> data; // noted the use of a template template parameter
 
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -100,7 +99,7 @@ TEST(backinserter_test1, test_queue)
 
 TEST(backinserter_test1, test_deque)
 {
-    BackInserter<int, std::deque, std::allocator<int>> data; // noted the use of a template template parameter
+    BackInserter<int, std::deque> data; // noted the use of a template template parameter
 
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -121,7 +120,7 @@ TEST(backinserter_test1, test_deque)
 
 TEST(backinserter_test1, test_list)
 {
-    BackInserter<int, std::list, std::allocator<int>> data; // noted the use of a template template parameter
+    BackInserter<int, std::list> data; // noted the use of a template template parameter
 
     std::random_device rd;
     std::mt19937 gen(rd());

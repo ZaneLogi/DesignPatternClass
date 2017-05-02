@@ -1,23 +1,57 @@
+//
+// Debug version
+//
+
 [==========] Running 5 tests from 1 test case.
 [----------] Global test environment set-up.
 [----------] 5 tests from backinserter_test1
 [ RUN      ] backinserter_test1.test_vector
-Time elapsed : 67500us
-[       OK ] backinserter_test1.test_vector (77 ms)
+Time elapsed : 62399us
+[       OK ] backinserter_test1.test_vector (62 ms)
 [ RUN      ] backinserter_test1.test_queue
-Time elapsed : 82500us
-[       OK ] backinserter_test1.test_queue (1050 ms)
+Time elapsed : 46799us
+[       OK ] backinserter_test1.test_queue (93 ms)
 [ RUN      ] backinserter_test1.test_deque
-Time elapsed : 287500us
-[       OK ] backinserter_test1.test_deque (1170 ms)
+Time elapsed : 62399us
+[       OK ] backinserter_test1.test_deque (94 ms)
 [ RUN      ] backinserter_test1.test_list
-Time elapsed : 460000us
-[       OK ] backinserter_test1.test_list (4925 ms)
+Time elapsed : 140399us
+[       OK ] backinserter_test1.test_list (218 ms)
 [ RUN      ] backinserter_test1.test_set
-Time elapsed : 1062500us
-[       OK ] backinserter_test1.test_set (1183 ms)
-[----------] 5 tests from backinserter_test1 (8412 ms total)
+Time elapsed : 592796us
+[       OK ] backinserter_test1.test_set (609 ms)
+[----------] 5 tests from backinserter_test1 (1107 ms total)
 
 [----------] Global test environment tear-down
-[==========] 5 tests from 1 test case ran. (8415 ms total)
+[==========] 5 tests from 1 test case ran. (1123 ms total)
+[  PASSED  ] 5 tests.
+
+
+
+//
+// Release version
+//
+
+[==========] Running 5 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 5 tests from backinserter_test1
+[ RUN      ] backinserter_test1.test_vector
+Time elapsed : 0us
+[       OK ] backinserter_test1.test_vector (15 ms)
+[ RUN      ] backinserter_test1.test_queue
+Time elapsed : 15599us
+[       OK ] backinserter_test1.test_queue (16 ms)
+[ RUN      ] backinserter_test1.test_deque
+Time elapsed : 0us
+[       OK ] backinserter_test1.test_deque (0 ms)
+[ RUN      ] backinserter_test1.test_list
+Time elapsed : 0us
+[       OK ] backinserter_test1.test_list (0 ms)
+[ RUN      ] backinserter_test1.test_set
+Time elapsed : 31199us
+[       OK ] backinserter_test1.test_set (31 ms)
+[----------] 5 tests from backinserter_test1 (78 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test case ran. (94 ms total)
 [  PASSED  ] 5 tests.
