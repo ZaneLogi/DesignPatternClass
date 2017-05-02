@@ -11,7 +11,7 @@
 
 template<
     typename ValueType,
-    template <typename, typename...> class ContainerType>
+    template <typename...> class ContainerType>
 class BackInserter
 {
 private:
