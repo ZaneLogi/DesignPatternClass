@@ -1,0 +1,34 @@
+Name:
+Messaging system
+
+Problem:
+Objects in the system communicate with each others with/out
+knowing the existence of the others.
+
+Context:
+Generally, if a object delivers a message to the other object,
+it needs to know the reference of the other object. This makes
+the implementation of these objects couple. Also, when these
+objects are coupled, it means the timing of the creations of
+objects is concerned. The messaging system should make the creation
+of the objects independant between senders and receivers.
+It takes responsibility to deliver the messages and coordinates
+the registration of the messages.
+
+Forces:
+The senders don't need to know who want the messages.
+The senders deliver the messages even without receivers.
+The receivers don't need to know who will send the messages.
+The receivers listen to the messages they want to receive.
+
+Solution:
+The messaging system maintains a list of messages that objects
+register to send to or receive for. For senders, they uses the system
+to broadcast the messages when they want to deliver the specific
+message. For receivers, they register what messages they
+want to be notified, then they wait the system to notify them for
+the specific message sent from senders.
+
+Using the messaging system, the delivery of the messages is made by
+the system. All objects don't directly communicate with others. It's
+easy to create new messages for necessary.   
