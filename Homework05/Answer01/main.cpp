@@ -30,9 +30,9 @@ class Pizza
 {
 public:
     virtual ~Pizza() {}
-    virtual Dough* get_dough() const = 0;
-    virtual Topping* get_topping() const = 0;
-    virtual Sauce* get_sauce() const = 0;
+    virtual Dough* get_dough() = 0;
+    virtual Topping* get_topping() = 0;
+    virtual Sauce* get_sauce() = 0;
 };
 
 
@@ -85,47 +85,47 @@ public:
 class HawaiianPizzaBuilder : public Pizza
 {
 private:
-    Dough* _dough;
-    Topping* _topping;
-    Sauce* _sauce;
+    CrisspyFlower _dough;
+    Pineapple _topping;
+    Mayo _sauce;
 
 public:
-    static Pizza* create(const std::string& name)
+    static Pizza* create()
     {
-        return new HawaiianPizzaBuilder(name);
+        return new HawaiianPizzaBuilder();
     }
 
-    Dough* get_dough() const override { return _dough; }
-    Topping* get_topping() const override { return _topping; }
-    Sauce* get_sauce() const override { return _sauce; }
+    Dough* get_dough() override { return &_dough; }
+    Topping* get_topping() override { return &_topping; }
+    Sauce* get_sauce() override { return &_sauce; }
 
 private:
-    HawaiianPizzaBuilder(const std::string& name)
+    HawaiianPizzaBuilder() = default;
+};
+
+
+//
+// class ChiliPizzaBuilder
+//
+class ChiliPizzaBuilder : public Pizza
+{
+private:
+    ToughFlower _dough;
+    ChiliPepper _topping;
+    SourSauce _sauce;
+
+public:
+    static Pizza* create()
     {
-        if (name == "Hawaii")
-        {
-            _dough = new CrisspyFlower;
-            _topping = new Pineapple;
-            _sauce = new Mayo;
-        }
-        else if (name == "SpicyCraz")
-        {
-            _dough = new ToughFlower;
-            _topping = new ChiliPepper;
-            _sauce = new SourSauce;
-        }
-        else
-        {
-            assert(false);
-        }
+        return new ChiliPizzaBuilder();
     }
 
-    ~HawaiianPizzaBuilder()
-    {
-        delete _dough;
-        delete _topping;
-        delete _sauce;
-    }
+    Dough* get_dough() override { return &_dough; }
+    Topping* get_topping() override { return &_topping; }
+    Sauce* get_sauce() override { return &_sauce; }
+
+private:
+    ChiliPizzaBuilder() = default;
 };
 
 
@@ -141,7 +141,7 @@ public:
         return &director;
     }
 
-    static void register_pizza_builder(const std::string &type, std::function<Pizza*(const std::string& name)> createFunc)
+    static void register_pizza_builder(const std::string &type, std::function<Pizza*()> createFunc)
     {
         builderMap[type] = createFunc;
     }
@@ -155,7 +155,7 @@ public:
     {
         auto itr = builderMap.find(name);
         if (itr != builderMap.end())
-            return itr->second(name);
+            return itr->second();
         else
             return nullptr;
     }
@@ -166,10 +166,10 @@ private:
     const pizza_director& operator = (const pizza_director&) = delete;
 
 private:
-    static std::map<std::string, std::function<Pizza*(const std::string&)>> builderMap;
+    static std::map<std::string, std::function<Pizza*()>> builderMap;
 };
 
-std::map<std::string, std::function<Pizza*(const std::string&)>> pizza_director::builderMap;
+std::map<std::string, std::function<Pizza*()>> pizza_director::builderMap;
 
 
 
@@ -193,9 +193,9 @@ TEST(HawaiianPizzaBuilder, Hawaii)
 //
 // TEST2
 //
-TEST(HawaiianPizzaBuilder, SpicyCraz)
+TEST(ChiliPizzaBuilder, SpicyCraz)
 {
-    pizza_director::register_pizza_builder("SpicyCraz", &HawaiianPizzaBuilder::create);
+    pizza_director::register_pizza_builder("SpicyCraz", &ChiliPizzaBuilder::create);
     Pizza* pizza = pizza_director::get_instance()->getPizza("SpicyCraz");
     Dough* my_dough = pizza->get_dough();
     Topping* my_topping = pizza->get_topping();

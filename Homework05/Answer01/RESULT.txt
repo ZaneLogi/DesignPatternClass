@@ -1,11 +1,15 @@
-[==========] Running 2 tests from 1 test case.
+[==========] Running 2 tests from 2 test cases.
 [----------] Global test environment set-up.
-[----------] 2 tests from HawaiianPizzaBuilder
+[----------] 1 test from HawaiianPizzaBuilder
 [ RUN      ] HawaiianPizzaBuilder.Hawaii
 [       OK ] HawaiianPizzaBuilder.Hawaii (0 ms)
-[ RUN      ] HawaiianPizzaBuilder.SpicyCraz
-[       OK ] HawaiianPizzaBuilder.SpicyCraz (0 ms)
-[----------] 2 tests from HawaiianPizzaBuilder (0 ms total)
+[----------] 1 test from HawaiianPizzaBuilder (0 ms total)
+
+[----------] 1 test from ChiliPizzaBuilder
+[ RUN      ] ChiliPizzaBuilder.SpicyCraz
+[       OK ] ChiliPizzaBuilder.SpicyCraz (0 ms)
+[----------] 1 test from ChiliPizzaBuilder (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 2 tests from 1 test case ran. (31 ms total)
+[==========] 2 tests from 2 test cases ran. (0 ms total)
+[  PASSED  ] 2 tests.
