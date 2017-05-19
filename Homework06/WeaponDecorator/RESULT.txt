@@ -1,0 +1,39 @@
+[==========] Running 11 tests from 4 test cases.
+[----------] Global test environment set-up.
+[----------] 5 tests from WeaponCreation
+[ RUN      ] WeaponCreation.Create
+[       OK ] WeaponCreation.Create (0 ms)
+[ RUN      ] WeaponCreation.Save
+[       OK ] WeaponCreation.Save (0 ms)
+[ RUN      ] WeaponCreation.Load
+[       OK ] WeaponCreation.Load (0 ms)
+[ RUN      ] WeaponCreation.Attack
+[       OK ] WeaponCreation.Attack (0 ms)
+[ RUN      ] WeaponCreation.Attribute
+[       OK ] WeaponCreation.Attribute (0 ms)
+[----------] 5 tests from WeaponCreation (0 ms total)
+
+[----------] 2 tests from BuilderDesignPattern
+[ RUN      ] BuilderDesignPattern.FireSword
+[       OK ] BuilderDesignPattern.FireSword (0 ms)
+[ RUN      ] BuilderDesignPattern.IceBow
+[       OK ] BuilderDesignPattern.IceBow (0 ms)
+[----------] 2 tests from BuilderDesignPattern (0 ms total)
+
+[----------] 2 tests from IteratorDesignPattern
+[ RUN      ] IteratorDesignPattern.Warehouse
+[       OK ] IteratorDesignPattern.Warehouse (0 ms)
+[ RUN      ] IteratorDesignPattern.WarehouseIterator
+[       OK ] IteratorDesignPattern.WarehouseIterator (0 ms)
+[----------] 2 tests from IteratorDesignPattern (0 ms total)
+
+[----------] 2 tests from CommandDesignPattern
+[ RUN      ] CommandDesignPattern.orderTest
+[       OK ] CommandDesignPattern.orderTest (0 ms)
+[ RUN      ] CommandDesignPattern.brokerTest
+[       OK ] CommandDesignPattern.brokerTest (0 ms)
+[----------] 2 tests from CommandDesignPattern (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 11 tests from 4 test cases ran. (0 ms total)
+[  PASSED  ] 11 tests.
