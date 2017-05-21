@@ -1,0 +1,19 @@
+[==========] Running 4 tests from 2 test cases.
+[----------] Global test environment set-up.
+[----------] 3 tests from LinkedList
+[ RUN      ] LinkedList.empty_test
+[       OK ] LinkedList.empty_test (0 ms)
+[ RUN      ] LinkedList.value_tset
+[       OK ] LinkedList.value_tset (0 ms)
+[ RUN      ] LinkedList.count_test
+[       OK ] LinkedList.count_test (0 ms)
+[----------] 3 tests from LinkedList (0 ms total)
+
+[----------] 1 test from LinkedListIterator
+[ RUN      ] LinkedListIterator.Test
+[       OK ] LinkedListIterator.Test (0 ms)
+[----------] 1 test from LinkedListIterator (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 2 test cases ran. (0 ms total)
+[  PASSED  ] 4 tests.
