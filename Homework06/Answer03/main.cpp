@@ -2,43 +2,29 @@
 #include <functional>
 
 
-class Number
-{
-    int _value;
-
-public:
-    Number(int v) : _value(v)
-    {}
-
-    void divide(Number v2)
-    {
-        _value /= v2._value;
-    }
-
-    void add(Number v2)
-    {
-        _value += v2._value;
-    }
-
-    int operator()()
-    {
-        return _value;
-    }
-};
-
 class Command
 {
 public:
     virtual void execute() = 0;
 };
 
+void divide(int* var1, int var2)
+{
+    *var1 /= var2;
+}
+
+void add(int* var1, int var2)
+{
+    *var1 += var2;
+}
+
 class SimpleCommand : public Command
 {
-    Number* _receiver;
-    std::function<void(Number*)> _action;
+    int* _receiver;
+    std::function<void(int*)> _action;
 
 public:
-    SimpleCommand(Number* num, std::function<void(Number*)> f)
+    SimpleCommand(int* num, std::function<void(int*)> f)
         : _receiver(num)
         , _action(f)
     {}
@@ -72,33 +58,33 @@ public:
 
 TEST(CommandDesignPattern,Test1)
 {
-    Number variableA(10);
-    Number variableB(5);
+    int variableA(10);
+    int variableB(5);
     std::vector<Command*> commands;
 
-    commands.emplace_back(new SimpleCommand(&variableA, std::bind(&Number::divide, std::placeholders::_1, variableB)));
-    commands.emplace_back(new SimpleCommand(&variableA, std::bind(&Number::add, std::placeholders::_1, variableB)));
+    commands.emplace_back(new SimpleCommand(&variableA, std::bind(&divide, std::placeholders::_1, variableB)));
+    commands.emplace_back(new SimpleCommand(&variableA, std::bind(&add, std::placeholders::_1, variableB)));
 
-    EXPECT_EQ(variableA(), 10);
+    EXPECT_EQ(variableA, 10);
 
     for (auto& c : commands)
         c->execute();
 
-    EXPECT_EQ(variableA(), 7);
+    EXPECT_EQ(variableA, 7);
 }
 
 TEST(CommandDesignPattern, Test2)
 {
-    Number variableA(10);
-    Number variableB(5);
+    int variableA(10);
+    int variableB(5);
     MacroCommand commands;
 
-    commands.push_back(new SimpleCommand(&variableA, std::bind(&Number::divide, std::placeholders::_1, variableB)));
-    commands.push_back(new SimpleCommand(&variableA, std::bind(&Number::add, std::placeholders::_1, variableB)));
+    commands.push_back(new SimpleCommand(&variableA, std::bind(&divide, std::placeholders::_1, variableB)));
+    commands.push_back(new SimpleCommand(&variableA, std::bind(&add, std::placeholders::_1, variableB)));
 
-    EXPECT_EQ(variableA(), 10);
+    EXPECT_EQ(variableA, 10);
     commands.execute();
-    EXPECT_EQ(variableA(), 7);
+    EXPECT_EQ(variableA, 7);
 }
 
 
