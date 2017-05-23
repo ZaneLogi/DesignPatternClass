@@ -55,7 +55,7 @@ public:
         return count;
     }
 
-    void push(T value)
+    void push(const T& value)
     {
         linked_list_node* node = new linked_list_node;
         node->_value = value;
@@ -67,7 +67,7 @@ public:
     {
         linked_list_node* node = _head;
         _head = _head->_next;
-        int value = node->_value;
+        T value = node->_value;
         delete node;
         return value;
     }
@@ -98,7 +98,7 @@ TEST(LinkedList, empty_test)
 
 TEST(LinkedList, value_tset)
 {
-    linked_list<int> list;
+    linked_list<float> list;
     list.push(0);
     list.push(1);
     list.push(2);
