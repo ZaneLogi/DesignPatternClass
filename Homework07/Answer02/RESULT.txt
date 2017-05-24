@@ -1,0 +1,12 @@
+[==========] Running 2 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 2 tests from Composite
+[ RUN      ] Composite.Test
+[       OK ] Composite.Test (0 ms)
+[ RUN      ] Composite.memory_leak_test
+[       OK ] Composite.memory_leak_test (0 ms)
+[----------] 2 tests from Composite (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test case ran. (2 ms total)
+[  PASSED  ] 2 tests.
