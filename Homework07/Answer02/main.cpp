@@ -75,35 +75,12 @@ public:
     }
 };
 
-class Director : public Employee
+class Director : public Manager
 {
-    std::vector<Employee*> _members;
-
 public:
     Director(const std::string& name)
-        : Employee(name)
+        : Manager(name)
     {}
-
-    ~Director() override
-    {
-        for (auto& m : _members)
-            delete m;
-    }
-
-    void manage(Employee* x)
-    {
-        _members.push_back(x);
-    }
-
-    std::string who() override
-    {
-        std::string who = _name;
-        for (auto& m : _members)
-        {
-            who += " " + m->who();
-        }
-        return who;
-    }
 };
 
 
