@@ -15,9 +15,9 @@ const int STATE2_INDEX = 1;
 class State
 {
 public:
-    virtual float go_to_state1(class HMM* hmm) = 0;     // return the transition probability
-    virtual float go_to_state2(class HMM* hmm) = 0;     // return the transition probability
-    virtual float get_output_probability(int o) = 0;    // return the output probability
+    virtual float go_to_state1(class HMM* hmm, std::ostream&) = 0;          // return the transition probability
+    virtual float go_to_state2(class HMM* hmm, std::ostream&) = 0;          // return the transition probability
+    virtual float get_output_probability(int idx, char ch, std::ostream&) = 0; // return the output probability
 };
 
 
@@ -27,9 +27,9 @@ public:
 class InitialState : public State
 {
 public:
-    float go_to_state1(HMM*) override;
-    float go_to_state2(HMM*) override;
-    float get_output_probability(int o);
+    float go_to_state1(HMM*, std::ostream&) override;
+    float go_to_state2(HMM*, std::ostream&) override;
+    float get_output_probability(int idx, char ch, std::ostream&);
 };
 
 
@@ -42,9 +42,9 @@ class State1 : public State
     static const float _output_probability[4];
 
 public:
-    float go_to_state1(HMM*) override;
-    float go_to_state2(HMM*) override;
-    float get_output_probability(int o) override;
+    float go_to_state1(HMM*, std::ostream&) override;
+    float go_to_state2(HMM*, std::ostream&) override;
+    float get_output_probability(int idx, char ch, std::ostream&) override;
 };
 
 
@@ -57,9 +57,9 @@ class State2 : public State
     static const float _output_probability[4];
 
 public:
-    float go_to_state1(HMM*) override;
-    float go_to_state2(HMM*) override;
-    float get_output_probability(int o) override;
+    float go_to_state1(HMM*, std::ostream&) override;
+    float go_to_state2(HMM*, std::ostream&) override;
+    float get_output_probability(int idx, char ch, std::ostream&) override;
 };
 
 
@@ -70,7 +70,7 @@ class HMM
 {
     State* _current_state;
 
-    std::map<char, std::function<float(State&, HMM*)>> _transitionFn;
+    std::map<char, std::function<float(State&, HMM*, std::ostream&)>> _transitionFn;
     std::map<char, int> _outputIdx;
 
 public:
@@ -96,11 +96,12 @@ public:
         _current_state = s;
     }
 
-    float get_probability(const std::string& states, const std::string& symbols)
+    float get_probability(const std::string& states, const std::string& symbols, std::ostream& log)
     {
         assert(states.size() == symbols.size());
 
         float prob = 1;
+        log << "1 ";
 
         auto symbolItr = symbols.cbegin();
         for (const auto& to_state : states)
@@ -108,14 +109,21 @@ public:
             assert(_transitionFn.find(to_state) != _transitionFn.end());
             assert(_outputIdx.find(*symbolItr) != _outputIdx.end());
 
+            log << "* ";
+
             // transition probability
-            prob *= _transitionFn[to_state](*_current_state, this);
+            prob *= _transitionFn[to_state](*_current_state, this, log);
+
+            log << "* ";
 
             // output probability
-            prob *= _current_state->get_output_probability(_outputIdx[*symbolItr]);
+            prob *= _current_state->get_output_probability(_outputIdx[*symbolItr], *symbolItr, log);
 
             ++symbolItr;
         }
+
+        log << "\n";
+
         return prob;
     }
 
@@ -138,23 +146,25 @@ const float State2::_output_probability[] = { 0.05f, 0.4f, 0.5f, 0.05f };
 //
 // the implementatoin of InitialState
 //
-float InitialState::go_to_state1(HMM* hmm)
+float InitialState::go_to_state1(HMM* hmm, std::ostream& log)
 {
+    log << "1(initial) ";
     hmm->set_current(new State1);
     delete this;
     return 1; // always 1
 }
 
 
-float InitialState::go_to_state2(HMM* hmm)
+float InitialState::go_to_state2(HMM* hmm, std::ostream& log)
 {
+    log << "1(initial) ";
     hmm->set_current(new State2);
     delete this;
     return 1; // always 1
 }
 
 
-float InitialState::get_output_probability(int o)
+float InitialState::get_output_probability(int idx, char ch, std::ostream&)
 {
     assert(false); // should not be here
     return 1;
@@ -164,50 +174,56 @@ float InitialState::get_output_probability(int o)
 //
 // the implementatoin of State1
 //
-float State1::go_to_state1(HMM* hmm)
+float State1::go_to_state1(HMM* hmm, std::ostream& log)
 {
+    log << _transition_probability[STATE1_INDEX] << " (state1->state1) ";
     hmm->set_current(new State1);
     delete this;
     return _transition_probability[STATE1_INDEX];
 }
 
 
-float State1::go_to_state2(HMM* hmm)
+float State1::go_to_state2(HMM* hmm, std::ostream& log)
 {
+    log << _transition_probability[STATE2_INDEX] << " (state1->state2) ";
     hmm->set_current(new State2);
     delete this;
     return _transition_probability[STATE2_INDEX];
 }
 
 
-float State1::get_output_probability(int o)
+float State1::get_output_probability(int idx, char ch, std::ostream& log)
 {
-    return _output_probability[o];
+    log << _output_probability[idx] << " (state1 emits " << ch << ") ";
+    return _output_probability[idx];
 }
 
 
 //
 // the implementatoin of State2
 //
-float State2::go_to_state1(HMM* hmm)
+float State2::go_to_state1(HMM* hmm, std::ostream& log)
 {
+    log << _transition_probability[STATE1_INDEX] << " (state2->state1) ";
     hmm->set_current(new State1);
     delete this;
     return _transition_probability[STATE1_INDEX];
 }
 
 
-float State2::go_to_state2(HMM* hmm)
+float State2::go_to_state2(HMM* hmm, std::ostream& log)
 {
+    log << _transition_probability[STATE2_INDEX] << " (state2->state2) ";
     hmm->set_current(new State2);
     delete this;
     return _transition_probability[STATE2_INDEX];
 }
 
 
-float State2::get_output_probability(int o)
+float State2::get_output_probability(int idx, char ch, std::ostream& log)
 {
-    return _output_probability[o];
+    log << _output_probability[idx] << " (state2 emits " << ch << ") ";
+    return _output_probability[idx];
 }
 
 
@@ -225,10 +241,19 @@ int main(int argc, char **argv)
     // Please just show the results without the calculation process.
     // You might want to add the begin and end states for the start and end of the symbol string (with prob. = 1).
     HMM hmm(new InitialState);
-    float prob = hmm.get_probability(state, symbol);
+    float prob = hmm.get_probability(state, symbol, std::cout);
     std::cout << "probability = " << prob << "\n";
 
-    //
-    // RESULT: probability = 1.80652e-010
-    //
+/*
+======
+RESULT
+======
+1 * 1(initial) * 0.4 (state1 emits A) * 0.99 (state1->state1) * 0.4 (state1 emit
+s T) * 0.01 (state1->state2) * 0.4 (state2 emits C) * 0.9 (state2->state2) * 0.5
+(state2 emits G) * 0.1 (state2->state1) * 0.4 (state1 emits T) * 0.99 (state1->
+state1) * 0.4 (state1 emits A) * 0.01 (state1->state2) * 0.4 (state2 emits C) *
+0.1 (state2->state1) * 0.1 (state1 emits G)
+probability = 1.80652e-010
+*/
+
 }
