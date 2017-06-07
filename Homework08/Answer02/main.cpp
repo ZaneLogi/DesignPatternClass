@@ -32,14 +32,9 @@ public:
         return v->visit(this);
     }
 
-    float get_area()
+    float get_length() const
     {
-        return _length * _length;
-    }
-
-    float get_perimeter()
-    {
-        return 4 * _length;
+        return _length;
     }
 };
 
@@ -57,14 +52,9 @@ public:
         return v->visit(this);
     }
 
-    float get_area()
+    float get_radius() const
     {
-        return _radius * _radius * 3.14f;
-    }
-
-    float get_perimeter()
-    {
-        return _radius * 2 * 3.14f;
+        return _radius;
     }
 };
 
@@ -74,12 +64,12 @@ class get_area_vistor : public visitor
 public:
     float visit(Square* square) override
     {
-        return square->get_area();
+        return square->get_length() * square->get_length();
     }
 
     float visit(Circle* circle) override
     {
-        return circle->get_area();
+        return circle->get_radius() * circle->get_radius() * 3.14f;
     }
 };
 
@@ -89,12 +79,12 @@ class get_perimeter_vistor : public visitor
 public:
     float visit(Square* square) override
     {
-        return square->get_perimeter();
+        return square->get_length() * 4;
     }
 
     float visit(Circle* circle) override
     {
-        return circle->get_perimeter();
+        return circle->get_radius() * 2 * 3.14f;
     }
 };
 
@@ -122,7 +112,7 @@ TEST(VisitorDesignPattern, get_perimeter_vistor)
     items.push_back(new Circle(5));
     visitor* v1 = new get_perimeter_vistor;
     EXPECT_EQ(items[0]->accept(v1), 40);
-    EXPECT_EQ(items[1]->accept(v1), 31.4);
+    EXPECT_EQ(items[1]->accept(v1), 5.0f * 6.28f);
 
     // free memory
     for (auto& i : items)
